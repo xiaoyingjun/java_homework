@@ -1,0 +1,95 @@
+mport java.util.ArrayList;
+import java.util.Scanner;
+ 
+/**
+ *
+ * @author maggie
+ */
+public class Test {
+    public static void main(String[] arg)
+    {
+            //       1.first get  Tree size
+            //        2. then the info should insert into the tree, ¡®1¡¯ is standing for Student,¡®2 ¡¯  is standing for worker
+            //        if the data is 1 then the next input is the coursesore size, and then the integer pairs for the credit and score.
+            //       if the data is 2 , then the next input is the Worker's Salary.
+        
+    }
+}
+interface Rankable{
+    int getRank();
+    void intputRank(Scanner s);
+}
+ class Worker implements Rankable{
+    int salary;
+ 
+    @Override
+    public int getRank() {
+         // example.
+         return salary/100;
+    }
+ 
+    @Override
+    public void intputRank( Scanner s) {
+        //example
+        salary=s.nextInt();
+    }
+    public String toString()
+    {
+        return "Worker:"+getRank();
+    }
+   
+}
+ 
+class Student implements Rankable{
+    @Override
+    public void intputRank(Scanner s) {
+       // //Need to Realize  ,get the course score list
+    }
+ 
+   
+    class CourseScore{
+        int Credit;
+        int score;
+        CourseScore(int Credit,int score){
+            this.Credit=Credit;
+            this.score=score;
+        }
+    }
+    ArrayList<CourseScore> courseList;
+   
+    public int getRank() {
+       //Need to Realize ,return the GPA by coursescore list;
+      
+    }
+    
+}
+class Node<T extends Rankable>
+{
+    Node preNode;
+    T data;
+    Node leftChild;
+    Node rightChild;
+ 
+    public Node(T t,Node preNode) {
+        this.preNode = preNode;
+        this.data=t;
+    }
+   
+}
+class RankBST<T extends Rankable>
+{
+    Node<T> root;
+  
+ 
+   void insert(T data){ //Need to Realize, inserting data according to the standard of the Binary Search Tree.
+      
+   } 
+   void delete(T data){} //Need to Realize, delete data according to the standard of the Binary Search Tree.
+   void print(Node n){
+       //Need to Realize, inorder traversing of the Binary Search Tree.
+     
+       }
+      
+      
+
+   }
